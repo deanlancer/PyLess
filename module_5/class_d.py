@@ -1,7 +1,18 @@
 class House:
+    houses_history = []
+
+    def __new__(cls, *args):
+        cls.args = args
+        cls.houses_history.append(args[0])
+        return super().__new__(cls)
+
     def __init__(self, name, number_of_floors):
         self.name = name
         self.number_of_floors = number_of_floors
+        # self.house_history = []
+
+    def __del__(self):
+        print(f"{self.name} снесен, но он останется в истории")
 
     def go_to(self, new_floor):
         if new_floor in range(self.number_of_floors):
