@@ -129,8 +129,7 @@ class Figure:
     def __is_valid_color(self, r, g, b):
         if 0 < r <= 255 and g in range(0, 255 + 1) and b in range(0, 255 + 1):
             return True
-        else:
-            return False
+        return False
 
     def set_color(self, r, g, b):
         condition = self.__is_valid_color(r, g, b)
@@ -149,8 +148,7 @@ class Figure:
         ###################
         if (i > 0 for i in (sides)) and len(sides) == self.sides_count:
             return True
-        else:
-            return False
+        return False
 
     def set_sides(self, *new_sides):
         condition = self.__is_valid_sides(*new_sides)
